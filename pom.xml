@@ -19,6 +19,11 @@
         <java.version>14</java.version>
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
+
+        <!-- Flyway -->
+        <flyway.user>databaseUser</flyway.user>
+        <flyway.password>databasePassword</flyway.password>
+        <flyway.schemas>schemaName</flyway.schemas>
     </properties>
 
     <dependencies>
@@ -44,6 +49,10 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
             <version>1.4.199</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
         </dependency>
 
         <!-- OTHER -->
