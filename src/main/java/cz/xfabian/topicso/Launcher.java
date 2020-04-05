@@ -11,5 +11,4 @@ public class Launcher {
 		ConfigurableApplicationContext context = SpringApplication.run(Launcher.class, args);
 		context.getBean(DataFiller.class).fillData();
 	}
-
 }
