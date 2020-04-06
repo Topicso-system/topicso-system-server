@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.persistence;
+package cz.xfabian.topicso.persistence.category;
 
 import javax.persistence.*;
 

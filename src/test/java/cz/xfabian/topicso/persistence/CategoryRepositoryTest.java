@@ -1,5 +1,7 @@
 package cz.xfabian.topicso.persistence;
 
+import cz.xfabian.topicso.persistence.category.CategoryEntity;
+import cz.xfabian.topicso.persistence.category.CategoryRepository;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.persistence;
+package cz.xfabian.topicso.persistence.category;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
