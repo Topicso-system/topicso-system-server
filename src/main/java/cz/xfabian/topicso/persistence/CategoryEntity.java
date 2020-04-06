@@ -1,18 +1,22 @@
 package cz.xfabian.topicso.persistence;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "category")
 public class CategoryEntity {
 
     @Id
     private int id;
+
     private String name;
+
     private String picture;
+
     @ManyToOne
     private CategoryEntity parent;
+
+    @Column(name = "order_number")
     private int order;
 
     public int getId() {

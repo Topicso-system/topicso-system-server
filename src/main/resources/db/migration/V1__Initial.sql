@@ -1,7 +1,7 @@
-CREATE TABLE Category (
-    Id INT NOT NULL PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL,
-    Picture VARCHAR(2083),
-    Parent INT REFERENCES Category(Id),
-    OrderNum INT
+CREATE TABLE category (
+    id INT NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    picture VARCHAR(2083),
+    parent_id INT REFERENCES Category(Id),
+    order_number INT
 );
