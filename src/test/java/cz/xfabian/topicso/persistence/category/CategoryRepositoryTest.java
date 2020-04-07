@@ -1,5 +1,6 @@
 package cz.xfabian.topicso.persistence.category;
 
+import cz.xfabian.topicso.TopicsoTestBase;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
@@ -9,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class CategoryRepositoryTest {
+public class CategoryRepositoryTest extends TopicsoTestBase {
 
     @Autowired
     private CategoryRepository categoryRepository;
