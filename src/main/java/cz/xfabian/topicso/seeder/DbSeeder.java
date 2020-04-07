@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.persistence.seed;
+package cz.xfabian.topicso.seeder;
 
 import cz.xfabian.topicso.core.video.VideoService;
 import cz.xfabian.topicso.rest.video.dto.VideoDTO;
