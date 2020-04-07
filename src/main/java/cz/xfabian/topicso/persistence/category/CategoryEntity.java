@@ -9,23 +9,26 @@ public class CategoryEntity {
 
     @Id
     @Access(AccessType.PROPERTY)
-    private int id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String picture;
 
     @ManyToOne(fetch= FetchType.LAZY)
     private CategoryEntity parent;
 
     @Column(name = "order_number")
-    private int order;
+    private Integer order;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -53,11 +56,11 @@ public class CategoryEntity {
         this.parent = parent;
     }
 
-    public int getOrder() {
+    public Integer getOrder() {
         return order;
     }
 
-    public void setOrder(int order) {
+    public void setOrder(Integer order) {
         this.order = order;
     }
 
@@ -66,11 +69,11 @@ public class CategoryEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CategoryEntity that = (CategoryEntity) o;
-        return id == that.id &&
-                order == that.order &&
+        return Objects.equals(id, that.id) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(picture, that.picture) &&
-                Objects.equals(parent, that.parent);
+                Objects.equals(parent, that.parent) &&
+                Objects.equals(order, that.order);
     }
 
     @Override

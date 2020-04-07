@@ -11,24 +11,29 @@ public class VideoEntity {
 
     @Id
     @Access(AccessType.PROPERTY)
-    private int id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
 
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private String youtubeId;
 
-    private double rating;
+    private Double rating;
 
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @ManyToOne(fetch= FetchType.LAZY)
     private CategoryEntity category;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -48,11 +53,11 @@ public class VideoEntity {
         this.youtubeId = youtubeId;
     }
 
-    public double getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
@@ -77,10 +82,10 @@ public class VideoEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VideoEntity that = (VideoEntity) o;
-        return id == that.id &&
-                Double.compare(that.rating, rating) == 0 &&
+        return Objects.equals(id, that.id) &&
                 Objects.equals(title, that.title) &&
                 Objects.equals(youtubeId, that.youtubeId) &&
+                Objects.equals(rating, that.rating) &&
                 Objects.equals(description, that.description) &&
                 Objects.equals(category, that.category);
     }
