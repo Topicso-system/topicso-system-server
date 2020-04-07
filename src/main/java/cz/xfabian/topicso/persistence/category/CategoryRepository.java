@@ -9,6 +9,6 @@ import java.util.ArrayList;
 @Repository
 public interface CategoryRepository extends JpaRepository<CategoryEntity, Integer> {
 
-    @Query(value = "SELECT * FROM category WHERE parent = NULL ORDER BY orderNum", nativeQuery = true)
+    @Query(value = "SELECT * FROM category WHERE parent_id IS NULL ORDER BY order_number", nativeQuery = true)
     ArrayList<CategoryEntity> getMainCategories();
 }

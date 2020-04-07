@@ -12,6 +12,7 @@ public class VideoEntity {
     @Id
     @Access(AccessType.PROPERTY)
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(updatable = false, nullable = false)
     private Integer id;
 
     @Column(nullable = false)
@@ -20,10 +21,11 @@ public class VideoEntity {
     @Column(nullable = false)
     private String youtubeId;
 
+    @Column(columnDefinition = "NUMERIC(2)")
     private Double rating;
 
     @Lob
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "text")
     private String description;
 
     @ManyToOne(fetch= FetchType.LAZY)

@@ -24,6 +24,7 @@ public class DbSeeder {
 
     @EventListener
     public void seed(ContextRefreshedEvent event) {
+        if (!videoRepository.findAll().isEmpty()) return; // Skip when data already inserted
         seedCategories();
         seedVideos();
     }
@@ -31,20 +32,20 @@ public class DbSeeder {
     private void seedCategories() {
         CategoryEntity categoryEntity1 = new CategoryEntity();
         categoryEntity1.setName("Information Technologies");
-        categoryEntity1.setPicture("IT.png");
+        categoryEntity1.setPicture("../assets/img/categories/IT.png");
         categoryEntity1.setOrder(1);
         categoryRepository.save(categoryEntity1);
 
         CategoryEntity categoryEntity2 = new CategoryEntity();
         categoryEntity2.setName("Sport");
-        categoryEntity2.setPicture("Sport.png");
+        categoryEntity2.setPicture("../assets/img/categories/Sport.png");
         categoryEntity2.setOrder(2);
         categoryRepository.save(categoryEntity2);
 
         CategoryEntity categoryEntity3 = new CategoryEntity();
         categoryEntity3.setName("Dance");
-        categoryEntity3.setPicture("Dance.png");
-        categoryEntity3.setOrder(2);
+        categoryEntity3.setPicture("../assets/img/categories/Dance.png");
+        categoryEntity3.setOrder(3);
         categoryRepository.save(categoryEntity3);
     }
 

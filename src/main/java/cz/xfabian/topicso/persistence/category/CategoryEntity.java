@@ -10,6 +10,7 @@ public class CategoryEntity {
     @Id
     @Access(AccessType.PROPERTY)
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(updatable = false, nullable = false)
     private Integer id;
 
     @Column(nullable = false)
@@ -19,6 +20,7 @@ public class CategoryEntity {
     private String picture;
 
     @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
     private CategoryEntity parent;
 
     @Column(name = "order_number")
