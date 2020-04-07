@@ -2,14 +2,17 @@ package cz.xfabian.topicso.rest.config;
 
 import cz.xfabian.topicso.rest.RestTestBase;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@RunWith(SpringRunner.class)
 public class CorsTest extends RestTestBase {
 
     @Value( "${cors.client}" )
