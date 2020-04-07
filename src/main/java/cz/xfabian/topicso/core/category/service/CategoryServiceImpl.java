@@ -1,6 +1,8 @@
 package cz.xfabian.topicso.core.category.service;
 
-import cz.xfabian.topicso.core.category.data.Category;
+import cz.xfabian.topicso.persistence.category.CategoryEntity;
+import cz.xfabian.topicso.persistence.category.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,13 +10,11 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
-    @Override
-    public List<Category> getMainCategories() {
-        return null;
-    }
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @Override
-    public List<Category> getSubCategories(int parentCategoryId) {
-        return null;
+    public List<CategoryEntity> getMainCategories() {
+        return categoryRepository.getMainCategories();
     }
 }

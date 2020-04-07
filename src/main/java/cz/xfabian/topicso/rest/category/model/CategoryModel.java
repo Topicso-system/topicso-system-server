@@ -1,11 +1,11 @@
-package cz.xfabian.topicso.core.category.data;
+package cz.xfabian.topicso.rest.category.model;
 
-public class Category {
+public class CategoryModel {
 
     private int id;
     private String name;
     private String picture;
-    private Category parent;
+    private int parent;
     private int order;
 
     public int getId() {
@@ -32,11 +32,11 @@ public class Category {
         this.picture = picture;
     }
 
-    public Category getParent() {
+    public int getParent() {
         return parent;
     }
 
-    public void setParent(Category parent) {
+    public void setParent(int parent) {
         this.parent = parent;
     }
 

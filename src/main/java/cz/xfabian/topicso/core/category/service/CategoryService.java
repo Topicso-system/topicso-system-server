@@ -1,12 +1,10 @@
 package cz.xfabian.topicso.core.category.service;
 
-import cz.xfabian.topicso.core.category.data.Category;
+import cz.xfabian.topicso.persistence.category.CategoryEntity;
 
 import java.util.List;
 
 public interface CategoryService {
 
-    List<Category> getMainCategories();
-
-    List<Category> getSubCategories(int parentCategoryId);
+    List<CategoryEntity> getMainCategories();
 }
