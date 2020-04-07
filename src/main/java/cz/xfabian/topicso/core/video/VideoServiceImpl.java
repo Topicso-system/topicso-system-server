@@ -1,24 +1,25 @@
 package cz.xfabian.topicso.core.video;
 
-import com.google.common.collect.ImmutableList;
-import cz.xfabian.topicso.rest.video.dto.VideoDTO;
+import cz.xfabian.topicso.persistence.video.VideoEntity;
+import cz.xfabian.topicso.persistence.video.VideoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class VideoServiceImpl implements VideoService {
 
-    private List<VideoDTO> videos = new ArrayList<>();
+    @Autowired
+    private VideoRepository videoRepository;
 
     @Override
-    public List<VideoDTO> getVideos() {
-        return ImmutableList.copyOf(videos);
+    public List<VideoEntity> getVideos() {
+        return videoRepository.findAll();
     }
 
     @Override
-    public void addVideo(VideoDTO video) {
-        videos.add(video);
+    public void addVideo(VideoEntity video) {
+        videoRepository.save(video);
     }
 }

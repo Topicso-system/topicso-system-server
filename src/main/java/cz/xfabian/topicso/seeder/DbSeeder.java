@@ -5,7 +5,6 @@ import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.category.CategoryRepository;
 import cz.xfabian.topicso.persistence.video.VideoEntity;
 import cz.xfabian.topicso.persistence.video.VideoRepository;
-import cz.xfabian.topicso.rest.video.dto.VideoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -54,9 +53,6 @@ public class DbSeeder {
         if (!itCategory.getName().equals("Information Technologies")) throw new IllegalStateException("Wrong category has been loaded during seeding");
 
         VideoEntity videoEntity;
-
-        VideoDTO videoDTO = new VideoDTO(1, "JUnit 5 Basics 1 - Introduction and agenda", "2E3WqYupx7c", 5, "JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
-        videoService.addVideo(videoDTO);
         videoEntity = new VideoEntity();
         videoEntity.setTitle("JUnit 5 Basics 1 - Introduction and agenda");
         videoEntity.setYoutubeId("2E3WqYupx7c");
@@ -65,9 +61,6 @@ public class DbSeeder {
         videoEntity.setCategory(itCategory);
         videoRepository.save(videoEntity);
 
-
-        videoDTO = new VideoDTO(2, "JUnit 5 Basics 2 - Why write tests", "kp6ei9mEggc", 4.8, "JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
-        videoService.addVideo(videoDTO);
         videoEntity = new VideoEntity();
         videoEntity.setTitle("JUnit 5 Basics 2 - Why write tests");
         videoEntity.setYoutubeId("kp6ei9mEggc");
@@ -76,9 +69,6 @@ public class DbSeeder {
         videoEntity.setCategory(itCategory);
         videoRepository.save(videoEntity);
 
-
-        videoDTO = new VideoDTO(3, "JUnit 5 Basics 3 - Why do we need a testing framework", "deMlViVF-mE", 4.1, "JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
-        videoService.addVideo(videoDTO);
         videoEntity = new VideoEntity();
         videoEntity.setTitle("JUnit 5 Basics 3 - Why do we need a testing framework");
         videoEntity.setYoutubeId("deMlViVF-mE");
@@ -87,8 +77,6 @@ public class DbSeeder {
         videoEntity.setCategory(itCategory);
         videoRepository.save(videoEntity);
 
-        videoDTO = new VideoDTO(4, "JUnit 5 Basics 4 - Why JUnit 5", "sQ4KgrxGQSc", 3.6, "JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
-        videoService.addVideo(videoDTO);
         videoEntity = new VideoEntity();
         videoEntity.setTitle("JUnit 5 Basics 4 - Why JUnit 5");
         videoEntity.setYoutubeId("sQ4KgrxGQSc");
@@ -97,8 +85,6 @@ public class DbSeeder {
         videoEntity.setCategory(itCategory);
         videoRepository.save(videoEntity);
 
-        videoDTO = new VideoDTO(5, "JUnit 5 Basics 5 - JUnit 5 Architecture", "1xRcRYKOTHs", 3.9, "JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
-        videoService.addVideo(videoDTO);
         videoEntity = new VideoEntity();
         videoEntity.setTitle("JUnit 5 Basics 5 - JUnit 5 Architecture");
         videoEntity.setYoutubeId("1xRcRYKOTHs");
@@ -107,8 +93,6 @@ public class DbSeeder {
         videoEntity.setCategory(itCategory);
         videoRepository.save(videoEntity);
 
-        videoDTO = new VideoDTO(6, "JUnit 5 Basics 6 - Creating a new JUnit 5 Maven project", "09ZZiNgUPVU", 4.8, "JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
-        videoService.addVideo(videoDTO);
         videoEntity = new VideoEntity();
         videoEntity.setTitle("JUnit 5 Basics 6 - Creating a new JUnit 5 Maven project");
         videoEntity.setYoutubeId("09ZZiNgUPVU");

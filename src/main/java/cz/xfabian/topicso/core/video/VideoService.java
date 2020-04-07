@@ -1,12 +1,12 @@
 package cz.xfabian.topicso.core.video;
 
-import cz.xfabian.topicso.rest.video.dto.VideoDTO;
+import cz.xfabian.topicso.persistence.video.VideoEntity;
 
 import java.util.List;
 
 public interface VideoService {
 
-    List<VideoDTO> getVideos();
+    List<VideoEntity> getVideos();
 
-    void addVideo(VideoDTO video);
+    void addVideo(VideoEntity video);
 }

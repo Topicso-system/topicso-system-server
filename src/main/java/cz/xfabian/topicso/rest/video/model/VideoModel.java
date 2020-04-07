@@ -1,8 +1,8 @@
-package cz.xfabian.topicso.rest.video.dto;
+package cz.xfabian.topicso.rest.video.model;
 
 import java.util.Objects;
 
-public class VideoDTO {
+public class VideoModel {
 
     private int id;
     private String title;
@@ -10,7 +10,7 @@ public class VideoDTO {
     private double rating;
     private String description;
 
-    public VideoDTO(int id, String title, String youtubeId, double rating, String description) {
+    public VideoModel(int id, String title, String youtubeId, double rating, String description) {
         this.id = id;
         this.title = title;
         this.youtubeId = youtubeId;
@@ -18,7 +18,7 @@ public class VideoDTO {
         this.description = description;
     }
 
-    public VideoDTO() {
+    public VideoModel() {
     }
 
     public int getId() {
@@ -65,7 +65,7 @@ public class VideoDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        VideoDTO videoDTO = (VideoDTO) o;
+        VideoModel videoDTO = (VideoModel) o;
         return id == videoDTO.id &&
                 Double.compare(videoDTO.rating, rating) == 0 &&
                 Objects.equals(title, videoDTO.title) &&
