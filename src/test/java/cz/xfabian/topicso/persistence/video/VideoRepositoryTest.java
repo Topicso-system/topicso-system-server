@@ -1,5 +1,6 @@
 package cz.xfabian.topicso.persistence.video;
 
+import cz.xfabian.topicso.TopicsoTestBase;
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.category.CategoryRepository;
 import org.junit.Before;
@@ -12,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class VideoRepositoryTest {
+public class VideoRepositoryTest extends TopicsoTestBase {
 
     @Autowired
     private VideoRepository videoRepository;
