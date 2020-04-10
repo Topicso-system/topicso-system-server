@@ -3,7 +3,6 @@ package cz.xfabian.topicso.persistence.video;
 import cz.xfabian.topicso.TopicsoTestBase;
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.category.CategoryRepository;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
@@ -21,29 +20,19 @@ public class VideoRepositoryTest extends TopicsoTestBase {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    private CategoryEntity categoryEntity;
-    private VideoEntity videoEntity;
-
-    @Before
-    public void init() {
-        categoryEntity = entityFactory.createCategory();
-        videoEntity = entityFactory.createVideo();
-        videoEntity.setCategory(categoryEntity);
-
-        categoryEntity = categoryRepository.save(categoryEntity);
-        videoEntity = videoRepository.save(videoEntity);
-    }
-
     @Test
     public void saveAndLoadTest() {
-        VideoEntity loadedVideo = videoRepository.findById(videoEntity.getId()).get();
+        CategoryEntity persistedCategory = persistedEntityFactory.persistedCategory();
+        VideoEntity persistedVideo = persistedEntityFactory.persistedVideo(persistedCategory);
+
+        VideoEntity loadedVideo = videoRepository.findById(persistedVideo.getId()).get();
 
         Assertions.assertAll("Video",
-                () -> Assertions.assertEquals(videoEntity.getTitle(), loadedVideo.getTitle(), "Video title  is not correct"),
-                () -> Assertions.assertEquals(videoEntity.getYoutubeId(), loadedVideo.getYoutubeId(), "Video youtubeId is not correct"),
-                () -> Assertions.assertEquals(videoEntity.getDescription(), loadedVideo.getDescription(), "Video description is not correct"),
-                () -> Assertions.assertEquals(videoEntity.getRating(), loadedVideo.getRating(), "Video rating is not correct"),
-                () -> Assertions.assertEquals(videoEntity.getCategory().getId(), loadedVideo.getCategory().getId(), "Video category id is not correct")
+                () -> Assertions.assertEquals(persistedVideo.getTitle(), loadedVideo.getTitle(), "Video title  is not correct"),
+                () -> Assertions.assertEquals(persistedVideo.getYoutubeId(), loadedVideo.getYoutubeId(), "Video youtubeId is not correct"),
+                () -> Assertions.assertEquals(persistedVideo.getDescription(), loadedVideo.getDescription(), "Video description is not correct"),
+                () -> Assertions.assertEquals(persistedVideo.getRating(), loadedVideo.getRating(), "Video rating is not correct"),
+                () -> Assertions.assertEquals(persistedVideo.getCategory().getId(), loadedVideo.getCategory().getId(), "Video category id is not correct")
         );
     }
 }

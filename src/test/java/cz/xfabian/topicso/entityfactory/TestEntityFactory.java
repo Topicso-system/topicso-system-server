@@ -1,4 +1,4 @@
-package cz.xfabian.topicso;
+package cz.xfabian.topicso.entityfactory;
 
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.video.VideoEntity;
@@ -28,16 +28,21 @@ public class TestEntityFactory {
 
     // Videos
     public VideoEntity createVideo() {
-        return createVideo("TestVideo");
+        return createVideo("TestVideo", null);
     }
 
-    public VideoEntity createVideo(String title) {
+    public VideoEntity createVideo(CategoryEntity categoryEntity) {
+        return createVideo("TestVideo", categoryEntity);
+    }
+
+    public VideoEntity createVideo(String title, CategoryEntity category) {
         VideoEntity videoEntity = new VideoEntity();
         videoEntity.setId(-1);
         videoEntity.setTitle(title);
         videoEntity.setDescription("Test description");
         videoEntity.setYoutubeId("Test youtubeId");
         videoEntity.setRating(0.5);
+        videoEntity.setCategory(category);
         return videoEntity;
     }
 }

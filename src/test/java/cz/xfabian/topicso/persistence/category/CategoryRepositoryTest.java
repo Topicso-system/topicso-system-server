@@ -21,33 +21,26 @@ public class CategoryRepositoryTest extends TopicsoTestBase {
 
     @Test
     public void saveTest() {
-        CategoryEntity origin = entityFactory.createCategory();
-
-        CategoryEntity savedCategory = categoryRepository.save(origin);
+        CategoryEntity savedCategory = persistedEntityFactory.persistedCategory();
 
         CategoryEntity loadedCategory = categoryRepository.findById(savedCategory.getId()).get();
+
         Assertions.assertAll("Category",
-                () -> Assertions.assertEquals(origin.getName(), loadedCategory.getName(), "Category name  is not correct"),
-                () -> Assertions.assertEquals(origin.getParent(), loadedCategory.getParent(), "Category parent is not correct"),
-                () -> Assertions.assertEquals(origin.getPicture(), loadedCategory.getPicture(), "Category picture is not correct"),
-                () -> Assertions.assertEquals(origin.getOrder(), loadedCategory.getOrder(), "Category order is not correct")
+                () -> Assertions.assertEquals(savedCategory.getName(), loadedCategory.getName(), "Category name  is not correct"),
+                () -> Assertions.assertEquals(savedCategory.getParent(), loadedCategory.getParent(), "Category parent is not correct"),
+                () -> Assertions.assertEquals(savedCategory.getPicture(), loadedCategory.getPicture(), "Category picture is not correct"),
+                () -> Assertions.assertEquals(savedCategory.getOrder(), loadedCategory.getOrder(), "Category order is not correct")
         );
     }
 
     @Test
     public void getMainCategoriesTest() {
-        CategoryEntity mainCategory1 = entityFactory.createCategory("MainCategory1");
-        CategoryEntity mainCategory2 = entityFactory.createCategory("MainCategory2");
-        CategoryEntity subCategory = entityFactory.createCategory("SubCategory", mainCategory1);
-
-        categoryRepository.save(mainCategory1);
-        categoryRepository.save(mainCategory2);
-        categoryRepository.save(subCategory);
+        CategoryEntity mainCategory1 = persistedEntityFactory.persistedCategory("MainCategory1");
+        CategoryEntity mainCategory2 = persistedEntityFactory.persistedCategory("MainCategory2");
+        CategoryEntity subCategory = persistedEntityFactory.persistedCategory("SubCategory", mainCategory1);
 
         ArrayList<CategoryEntity> mainCategories = categoryRepository.getMainCategories();
 
         Assert.assertEquals(List.of(mainCategory1, mainCategory2), mainCategories);
     }
-
-
 }
