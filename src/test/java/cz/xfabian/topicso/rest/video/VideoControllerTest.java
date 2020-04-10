@@ -23,18 +23,18 @@ public class VideoControllerTest extends RestTestBase {
 
     @Test
     public void getVideosTest() throws Exception {
-        VideoEntity video1 = entityFactory.createVideo();
+        VideoEntity video = entityFactory.createVideo();
 
-        Mockito.when(videoService.getVideos()).thenReturn(ImmutableList.of(video1));
+        Mockito.when(videoService.getVideos()).thenReturn(ImmutableList.of(video));
 
         mockClient.perform(get("/videos")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$[0].id", is(video1.getId())))
-                .andExpect(jsonPath("$[0].title", is(video1.getTitle())))
-                .andExpect(jsonPath("$[0].youtubeId", is(video1.getYoutubeId())))
-                .andExpect(jsonPath("$[0].rating", is(video1.getRating())))
-                .andExpect(jsonPath("$[0].description", is(video1.getDescription())));
+                .andExpect(jsonPath("$[0].id", is(video.getId())))
+                .andExpect(jsonPath("$[0].title", is(video.getTitle())))
+                .andExpect(jsonPath("$[0].youtubeId", is(video.getYoutubeId())))
+                .andExpect(jsonPath("$[0].rating", is(video.getRating())))
+                .andExpect(jsonPath("$[0].description", is(video.getDescription())));
     }
 }
