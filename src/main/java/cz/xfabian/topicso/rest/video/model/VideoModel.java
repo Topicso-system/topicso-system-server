@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class VideoModel {
 
-    private int id;
+    private Integer id;
     private String title;
     private String youtubeId;
     private double rating;
     private String description;
 
-    public VideoModel(int id, String title, String youtubeId, double rating, String description) {
+    public VideoModel(Integer id, String title, String youtubeId, double rating, String description) {
         this.id = id;
         this.title = title;
         this.youtubeId = youtubeId;
@@ -21,11 +21,11 @@ public class VideoModel {
     public VideoModel() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -2,17 +2,17 @@ package cz.xfabian.topicso.rest.category.model;
 
 public class CategoryModel {
 
-    private int id;
+    private Integer id;
     private String name;
     private String picture;
-    private int parent;
-    private int order;
+    private Integer parent;
+    private Integer order;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -32,19 +32,19 @@ public class CategoryModel {
         this.picture = picture;
     }
 
-    public int getParent() {
+    public Integer getParent() {
         return parent;
     }
 
-    public void setParent(int parent) {
+    public void setParent(Integer parent) {
         this.parent = parent;
     }
 
-    public int getOrder() {
+    public Integer getOrder() {
         return order;
     }
 
-    public void setOrder(int order) {
+    public void setOrder(Integer order) {
         this.order = order;
     }
 }
