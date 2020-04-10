@@ -1,24 +1,40 @@
 package cz.xfabian.topicso.rest.video;
 
+import com.google.common.collect.ImmutableList;
+import cz.xfabian.topicso.core.video.VideoService;
+import cz.xfabian.topicso.persistence.video.VideoEntity;
 import cz.xfabian.topicso.rest.RestTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 public class VideoControllerTest extends RestTestBase {
 
+    @MockBean
+    private VideoService videoService;
+
     @Test
     public void getVideosTest() throws Exception {
+        VideoEntity video1 = entityFactory.createVideo();
+
+        Mockito.when(videoService.getVideos()).thenReturn(ImmutableList.of(video1));
+
         mockClient.perform(get("/videos")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content()
-                        .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$[0].id", is(video1.getId())))
+                .andExpect(jsonPath("$[0].title", is(video1.getTitle())))
+                .andExpect(jsonPath("$[0].youtubeId", is(video1.getYoutubeId())))
+                .andExpect(jsonPath("$[0].rating", is(video1.getRating())))
+                .andExpect(jsonPath("$[0].description", is(video1.getDescription())));
     }
 }
