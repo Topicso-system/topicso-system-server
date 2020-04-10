@@ -1,6 +1,5 @@
 package cz.xfabian.topicso;
 
-import cz.xfabian.topicso.persistence.TestEntityFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.annotation.DirtiesContext;

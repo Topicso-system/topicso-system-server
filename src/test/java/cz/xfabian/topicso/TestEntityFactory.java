@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.persistence;
+package cz.xfabian.topicso;
 
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.video.VideoEntity;
