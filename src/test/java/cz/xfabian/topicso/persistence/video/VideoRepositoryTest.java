@@ -26,8 +26,8 @@ public class VideoRepositoryTest extends TopicsoTestBase {
 
     @Before
     public void init() {
-        categoryEntity = createCategory();
-        videoEntity = createVideo();
+        categoryEntity = entityFactory.createCategory();
+        videoEntity = entityFactory.createVideo();
         videoEntity.setCategory(categoryEntity);
 
         categoryEntity = categoryRepository.save(categoryEntity);
@@ -45,22 +45,5 @@ public class VideoRepositoryTest extends TopicsoTestBase {
                 () -> Assertions.assertEquals(videoEntity.getRating(), loadedVideo.getRating(), "Video rating is not correct"),
                 () -> Assertions.assertEquals(videoEntity.getCategory().getId(), loadedVideo.getCategory().getId(), "Video category id is not correct")
         );
-    }
-
-    private VideoEntity createVideo() {
-        VideoEntity videoEntity = new VideoEntity();
-        videoEntity.setTitle("Test video");
-        videoEntity.setDescription("Test description");
-        videoEntity.setYoutubeId("Test youtubeId");
-        videoEntity.setRating(0.5);
-        return videoEntity;
-    }
-
-    private CategoryEntity createCategory() {
-        CategoryEntity category = new CategoryEntity();
-        category.setName("TestCategory");
-        category.setPicture("picture");
-        category.setOrder(1);
-        return category;
     }
 }
