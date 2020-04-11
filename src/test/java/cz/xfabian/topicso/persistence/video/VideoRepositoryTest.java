@@ -3,12 +3,16 @@ package cz.xfabian.topicso.persistence.video;
 import cz.xfabian.topicso.TopicsoTestBase;
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.category.CategoryRepository;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -34,5 +38,19 @@ public class VideoRepositoryTest extends TopicsoTestBase {
                 () -> Assertions.assertEquals(persistedVideo.getRating(), loadedVideo.getRating(), "Video rating is not correct"),
                 () -> Assertions.assertEquals(persistedVideo.getCategory().getId(), loadedVideo.getCategory().getId(), "Video category id is not correct")
         );
+    }
+
+    @Test
+    public void findByCategoryTest() {
+        CategoryEntity categoryA = persistedEntityFactory.persistedCategory("CategoryA");
+        CategoryEntity categoryB = persistedEntityFactory.persistedCategory("CategoryB");
+
+        VideoEntity aCategoryVideo1 = persistedEntityFactory.persistedVideo("aCategoryVideo1", categoryA);
+        VideoEntity aCategoryVideo2 = persistedEntityFactory.persistedVideo("aCategoryVideo2", categoryA);
+        VideoEntity bCategoryVideo = persistedEntityFactory.persistedVideo("bCategoryVideo", categoryB);
+
+        ArrayList<VideoEntity> videosByCategoryA = videoRepository.findByCategory(categoryA.getId());
+
+        Assert.assertEquals(List.of(aCategoryVideo1, aCategoryVideo2), videosByCategoryA);
     }
 }

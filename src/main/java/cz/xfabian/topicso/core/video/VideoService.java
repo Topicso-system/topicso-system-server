@@ -8,5 +8,7 @@ public interface VideoService {
 
     List<VideoEntity> getVideos();
 
+    List<VideoEntity> getVideosByCategory(int categoryId);
+
     void addVideo(VideoEntity video);
 }

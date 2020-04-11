@@ -33,11 +33,15 @@ public class TestPersistedEntityFactory {
     }
 
     // Video
+    public VideoEntity persistedVideo() {
+        return videoRepository.save(entityFactory.createVideo());
+    }
+
     public VideoEntity persistedVideo(CategoryEntity category) {
         return videoRepository.save(entityFactory.createVideo(category));
     }
 
-    public VideoEntity persistedVideo() {
-        return videoRepository.save(entityFactory.createVideo());
+    public VideoEntity persistedVideo(String videoTitle, CategoryEntity categoryEntity) {
+        return videoRepository.save(entityFactory.createVideo(videoTitle, categoryEntity));
     }
 }

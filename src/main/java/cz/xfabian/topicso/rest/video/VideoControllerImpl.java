@@ -20,4 +20,11 @@ public class VideoControllerImpl implements VideoController {
         List<VideoEntity> videoEntities = videoService.getVideos();
         return new VideoEntityModelMapper().map(videoEntities);
     }
+
+    @Override
+    public List<VideoModel> getVideosByCategory(int categoryId) {
+        List<VideoEntity> videosByCategory = videoService.getVideosByCategory(categoryId);
+        return new VideoEntityModelMapper().map(videosByCategory);
+    }
+
 }

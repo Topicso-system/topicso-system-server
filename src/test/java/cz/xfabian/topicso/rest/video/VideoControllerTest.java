@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -28,6 +29,23 @@ public class VideoControllerTest extends RestTestBase {
         Mockito.when(videoService.getVideos()).thenReturn(ImmutableList.of(video));
 
         mockClient.perform(get("/videos")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$[0].id", is(video.getId())))
+                .andExpect(jsonPath("$[0].title", is(video.getTitle())))
+                .andExpect(jsonPath("$[0].youtubeId", is(video.getYoutubeId())))
+                .andExpect(jsonPath("$[0].rating", is(video.getRating())))
+                .andExpect(jsonPath("$[0].description", is(video.getDescription())));
+    }
+
+    @Test
+    public void getVideosByCategoryTest() throws Exception {
+        VideoEntity video = entityFactory.createVideo();
+
+        Mockito.when(videoService.getVideosByCategory(anyInt())).thenReturn(ImmutableList.of(video));
+
+        mockClient.perform(get("/categories/1/videos")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))

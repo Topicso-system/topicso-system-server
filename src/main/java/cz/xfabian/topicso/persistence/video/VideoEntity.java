@@ -24,7 +24,6 @@ public class VideoEntity {
     @Column(columnDefinition = "NUMERIC(2)")
     private Double rating;
 
-    @Lob
     @Column(columnDefinition = "text")
     private String description;
 
