@@ -50,8 +50,18 @@ public class DbSeeder {
     }
 
     private void seedVideos() {
+        seedItVideos();
+//        seedDanceVideos();
+    }
+
+    private void seedDanceVideos() {
+        CategoryEntity danceCategory = categoryRepository.findById(3).get();
+        throwIfWrongCategory(danceCategory, "Dance");
+    }
+
+    private void seedItVideos() {
         CategoryEntity itCategory = categoryRepository.findById(1).get();
-        if (!itCategory.getName().equals("Information Technologies")) throw new IllegalStateException("Wrong category has been loaded during seeding");
+        throwIfWrongCategory(itCategory, "Information Technologies");
 
         VideoEntity videoEntity;
         videoEntity = new VideoEntity();
@@ -101,5 +111,9 @@ public class DbSeeder {
         videoEntity.setDescription("JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
         videoEntity.setCategory(itCategory);
         videoRepository.save(videoEntity);
+    }
+
+    private void throwIfWrongCategory(CategoryEntity category, String expectedCategoryTitle) {
+        if (!category.getName().equals(expectedCategoryTitle)) throw new IllegalStateException("Wrong category has been loaded during seeding");
     }
 }
