@@ -36,7 +36,9 @@ public class VideoControllerTest extends RestTestBase {
                 .andExpect(jsonPath("$[0].title", is(video.getTitle())))
                 .andExpect(jsonPath("$[0].youtubeId", is(video.getYoutubeId())))
                 .andExpect(jsonPath("$[0].rating", is(video.getRating())))
-                .andExpect(jsonPath("$[0].description", is(video.getDescription())));
+                .andExpect(jsonPath("$[0].description", is(video.getDescription())))
+                .andExpect(jsonPath("$[0].difficulty.id", is(video.getDifficultyLevel().name())))
+                .andExpect(jsonPath("$[0].difficulty.displayName", is(video.getDifficultyLevel().getDisplayName())));
     }
 
     @Test
@@ -53,6 +55,8 @@ public class VideoControllerTest extends RestTestBase {
                 .andExpect(jsonPath("$[0].title", is(video.getTitle())))
                 .andExpect(jsonPath("$[0].youtubeId", is(video.getYoutubeId())))
                 .andExpect(jsonPath("$[0].rating", is(video.getRating())))
-                .andExpect(jsonPath("$[0].description", is(video.getDescription())));
+                .andExpect(jsonPath("$[0].description", is(video.getDescription())))
+                .andExpect(jsonPath("$[0].difficulty.id", is(video.getDifficultyLevel().name())))
+                .andExpect(jsonPath("$[0].difficulty.displayName", is(video.getDifficultyLevel().getDisplayName())));
     }
 }

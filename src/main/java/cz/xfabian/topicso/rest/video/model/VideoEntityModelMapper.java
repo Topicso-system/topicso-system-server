@@ -24,6 +24,7 @@ public class VideoEntityModelMapper {
         videoModel.setYoutubeId(videoEntity.getYoutubeId());
         videoModel.setDescription(videoEntity.getDescription());
         videoModel.setRating(videoEntity.getRating());
+        videoModel.setDifficulty(new DifficultyLevelModelMapper().map(videoEntity.getDifficultyLevel()));
         return videoModel;
     }
 }

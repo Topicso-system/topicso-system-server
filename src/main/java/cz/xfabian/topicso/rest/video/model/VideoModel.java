@@ -9,17 +9,7 @@ public class VideoModel {
     private String youtubeId;
     private double rating;
     private String description;
-
-    public VideoModel(Integer id, String title, String youtubeId, double rating, String description) {
-        this.id = id;
-        this.title = title;
-        this.youtubeId = youtubeId;
-        this.rating = rating;
-        this.description = description;
-    }
-
-    public VideoModel() {
-    }
+    private DifficultyLevelModel difficulty;
 
     public Integer getId() {
         return id;
@@ -61,20 +51,29 @@ public class VideoModel {
         this.description = description;
     }
 
+    public DifficultyLevelModel getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(DifficultyLevelModel difficulty) {
+        this.difficulty = difficulty;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        VideoModel videoDTO = (VideoModel) o;
-        return id == videoDTO.id &&
-                Double.compare(videoDTO.rating, rating) == 0 &&
-                Objects.equals(title, videoDTO.title) &&
-                Objects.equals(youtubeId, videoDTO.youtubeId) &&
-                Objects.equals(description, videoDTO.description);
+        VideoModel that = (VideoModel) o;
+        return Double.compare(that.rating, rating) == 0 &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(title, that.title) &&
+                Objects.equals(youtubeId, that.youtubeId) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(difficulty, that.difficulty);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, youtubeId, rating, description);
+        return Objects.hash(id, title, youtubeId, rating, description, difficulty);
     }
 }
