@@ -1,7 +1,7 @@
 package cz.xfabian.topicso.core.category.service;
 
-import cz.xfabian.topicso.persistence.category.CategoryEntity;
-import cz.xfabian.topicso.persistence.category.CategoryRepository;
+import cz.xfabian.topicso.domain.category.CategoryEntity;
+import cz.xfabian.topicso.domain.category.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package cz.xfabian.topicso.rest.category;
 
 import cz.xfabian.topicso.core.category.service.CategoryService;
-import cz.xfabian.topicso.persistence.category.CategoryEntity;
+import cz.xfabian.topicso.domain.category.CategoryEntity;
 import cz.xfabian.topicso.rest.category.model.CategoryEntityModelMapper;
 import cz.xfabian.topicso.rest.category.model.CategoryModel;
 import org.springframework.beans.factory.annotation.Autowired;

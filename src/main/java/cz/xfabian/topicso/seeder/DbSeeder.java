@@ -1,11 +1,11 @@
 package cz.xfabian.topicso.seeder;
 
 import cz.xfabian.topicso.core.video.VideoService;
-import cz.xfabian.topicso.persistence.category.CategoryEntity;
-import cz.xfabian.topicso.persistence.category.CategoryRepository;
-import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
-import cz.xfabian.topicso.persistence.video.VideoEntity;
-import cz.xfabian.topicso.persistence.video.VideoRepository;
+import cz.xfabian.topicso.domain.category.CategoryEntity;
+import cz.xfabian.topicso.domain.category.CategoryRepository;
+import cz.xfabian.topicso.domain.difficulty.DifficultyLevel;
+import cz.xfabian.topicso.domain.video.VideoEntity;
+import cz.xfabian.topicso.domain.video.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;

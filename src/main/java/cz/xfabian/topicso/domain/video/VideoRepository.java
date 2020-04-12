@@ -1,6 +1,6 @@
-package cz.xfabian.topicso.persistence.video;
+package cz.xfabian.topicso.domain.video;
 
-import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
+import cz.xfabian.topicso.domain.difficulty.DifficultyLevel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

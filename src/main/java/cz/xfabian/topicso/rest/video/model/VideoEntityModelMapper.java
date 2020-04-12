@@ -1,7 +1,7 @@
 package cz.xfabian.topicso.rest.video.model;
 
 import com.google.common.collect.ImmutableList;
-import cz.xfabian.topicso.persistence.video.VideoEntity;
+import cz.xfabian.topicso.domain.video.VideoEntity;
 
 import java.util.List;
 

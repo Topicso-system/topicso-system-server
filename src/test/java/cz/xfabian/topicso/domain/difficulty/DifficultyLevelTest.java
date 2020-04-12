@@ -1,11 +1,11 @@
-package cz.xfabian.topicso.persistence.difficulty;
+package cz.xfabian.topicso.domain.difficulty;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
 
-import static cz.xfabian.topicso.persistence.difficulty.DifficultyLevel.*;
+import static cz.xfabian.topicso.domain.difficulty.DifficultyLevel.*;
 
 public class DifficultyLevelTest {
 

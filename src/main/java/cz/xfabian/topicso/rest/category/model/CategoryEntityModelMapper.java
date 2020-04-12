@@ -1,7 +1,7 @@
 package cz.xfabian.topicso.rest.category.model;
 
 import com.google.common.collect.ImmutableList;
-import cz.xfabian.topicso.persistence.category.CategoryEntity;
+import cz.xfabian.topicso.domain.category.CategoryEntity;
 
 import java.util.List;
 

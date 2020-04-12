@@ -2,7 +2,7 @@ package cz.xfabian.topicso.rest.category;
 
 import com.google.common.collect.ImmutableList;
 import cz.xfabian.topicso.core.category.service.CategoryService;
-import cz.xfabian.topicso.persistence.category.CategoryEntity;
+import cz.xfabian.topicso.domain.category.CategoryEntity;
 import cz.xfabian.topicso.rest.RestTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;

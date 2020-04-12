@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.persistence.difficulty;
+package cz.xfabian.topicso.domain.difficulty;
 
 import java.util.Arrays;
 import java.util.List;

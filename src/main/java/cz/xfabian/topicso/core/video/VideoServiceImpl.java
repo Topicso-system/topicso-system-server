@@ -1,7 +1,7 @@
 package cz.xfabian.topicso.core.video;
 
-import cz.xfabian.topicso.persistence.video.VideoEntity;
-import cz.xfabian.topicso.persistence.video.VideoRepository;
+import cz.xfabian.topicso.domain.video.VideoEntity;
+import cz.xfabian.topicso.domain.video.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

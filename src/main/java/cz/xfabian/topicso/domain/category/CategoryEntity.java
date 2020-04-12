@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.persistence.category;
+package cz.xfabian.topicso.domain.category;
 
 import javax.persistence.*;
 import java.util.Objects;

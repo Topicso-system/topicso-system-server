@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.persistence.category;
+package cz.xfabian.topicso.domain.category;
 
 import cz.xfabian.topicso.TopicsoTestBase;
 import org.junit.Assert;

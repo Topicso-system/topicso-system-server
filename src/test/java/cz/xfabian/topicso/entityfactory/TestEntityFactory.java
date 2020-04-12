@@ -1,8 +1,8 @@
 package cz.xfabian.topicso.entityfactory;
 
-import cz.xfabian.topicso.persistence.category.CategoryEntity;
-import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
-import cz.xfabian.topicso.persistence.video.VideoEntity;
+import cz.xfabian.topicso.domain.category.CategoryEntity;
+import cz.xfabian.topicso.domain.difficulty.DifficultyLevel;
+import cz.xfabian.topicso.domain.video.VideoEntity;
 import org.springframework.stereotype.Component;
 
 @Component

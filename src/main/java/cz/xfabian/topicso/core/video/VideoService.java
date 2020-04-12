@@ -1,6 +1,6 @@
 package cz.xfabian.topicso.core.video;
 
-import cz.xfabian.topicso.persistence.video.VideoEntity;
+import cz.xfabian.topicso.domain.video.VideoEntity;
 
 import java.util.List;
 
