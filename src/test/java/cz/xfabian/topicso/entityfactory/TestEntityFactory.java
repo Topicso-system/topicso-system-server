@@ -1,6 +1,7 @@
 package cz.xfabian.topicso.entityfactory;
 
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
+import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
 import cz.xfabian.topicso.persistence.video.VideoEntity;
 import org.springframework.stereotype.Component;
 
@@ -36,6 +37,10 @@ public class TestEntityFactory {
     }
 
     public VideoEntity createVideo(String title, CategoryEntity category) {
+        return createVideo(title, category, DifficultyLevel.BEGINNER);
+    }
+
+    public VideoEntity createVideo(String title, CategoryEntity category, DifficultyLevel difficulty) {
         VideoEntity videoEntity = new VideoEntity();
         videoEntity.setId(-1);
         videoEntity.setTitle(title);
@@ -43,6 +48,7 @@ public class TestEntityFactory {
         videoEntity.setYoutubeId("Test youtubeId");
         videoEntity.setRating(0.5);
         videoEntity.setCategory(category);
+        videoEntity.setDifficultyLevel(difficulty);
         return videoEntity;
     }
 }

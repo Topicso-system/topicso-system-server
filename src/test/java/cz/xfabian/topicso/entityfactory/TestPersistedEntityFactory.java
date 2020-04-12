@@ -2,6 +2,7 @@ package cz.xfabian.topicso.entityfactory;
 
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.category.CategoryRepository;
+import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
 import cz.xfabian.topicso.persistence.video.VideoEntity;
 import cz.xfabian.topicso.persistence.video.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,9 @@ public class TestPersistedEntityFactory {
 
     public VideoEntity persistedVideo(String videoTitle, CategoryEntity categoryEntity) {
         return videoRepository.save(entityFactory.createVideo(videoTitle, categoryEntity));
+    }
+
+    public VideoEntity persistedVideo(String videoTitle, CategoryEntity categoryEntity, DifficultyLevel difficulty) {
+        return videoRepository.save(entityFactory.createVideo(videoTitle, categoryEntity, difficulty));
     }
 }

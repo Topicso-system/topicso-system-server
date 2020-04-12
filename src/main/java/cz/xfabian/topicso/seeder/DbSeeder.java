@@ -3,6 +3,7 @@ package cz.xfabian.topicso.seeder;
 import cz.xfabian.topicso.core.video.VideoService;
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.category.CategoryRepository;
+import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
 import cz.xfabian.topicso.persistence.video.VideoEntity;
 import cz.xfabian.topicso.persistence.video.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,7 @@ public class DbSeeder {
         videoEntity.setRating(5.0);
         videoEntity.setDescription("JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
         videoEntity.setCategory(itCategory);
+        videoEntity.setDifficultyLevel(DifficultyLevel.ADVANCED);
         videoRepository.save(videoEntity);
 
         videoEntity = new VideoEntity();
@@ -78,6 +80,7 @@ public class DbSeeder {
         videoEntity.setRating(4.8);
         videoEntity.setDescription("JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
         videoEntity.setCategory(itCategory);
+        videoEntity.setDifficultyLevel(DifficultyLevel.ADVANCED);
         videoRepository.save(videoEntity);
 
         videoEntity = new VideoEntity();
@@ -86,6 +89,7 @@ public class DbSeeder {
         videoEntity.setRating(4.1);
         videoEntity.setDescription("JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
         videoEntity.setCategory(itCategory);
+        videoEntity.setDifficultyLevel(DifficultyLevel.ADVANCED);
         videoRepository.save(videoEntity);
 
         videoEntity = new VideoEntity();
@@ -94,6 +98,7 @@ public class DbSeeder {
         videoEntity.setRating(3.6);
         videoEntity.setDescription("JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
         videoEntity.setCategory(itCategory);
+        videoEntity.setDifficultyLevel(DifficultyLevel.ADVANCED);
         videoRepository.save(videoEntity);
 
         videoEntity = new VideoEntity();
@@ -102,6 +107,7 @@ public class DbSeeder {
         videoEntity.setRating(3.9);
         videoEntity.setDescription("JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
         videoEntity.setCategory(itCategory);
+        videoEntity.setDifficultyLevel(DifficultyLevel.ADVANCED);
         videoRepository.save(videoEntity);
 
         videoEntity = new VideoEntity();
@@ -110,6 +116,7 @@ public class DbSeeder {
         videoEntity.setRating(4.8);
         videoEntity.setDescription("JUnit 5 Basics is an introduction to the JUnit Jupiter testing framework. JUnit is the defacto standard for testing in Java. learn about how to use JUnit to write effective tests. Understand the features of JUnit including the `@Test` annotation, assertion APIs, test lifecycle and controlling executions.");
         videoEntity.setCategory(itCategory);
+        videoEntity.setDifficultyLevel(DifficultyLevel.ADVANCED);
         videoRepository.save(videoEntity);
     }
 

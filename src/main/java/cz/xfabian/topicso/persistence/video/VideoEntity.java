@@ -1,6 +1,7 @@
 package cz.xfabian.topicso.persistence.video;
 
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
+import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -29,6 +30,10 @@ public class VideoEntity {
 
     @ManyToOne(fetch= FetchType.LAZY)
     private CategoryEntity category;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "difficulty_level")
+    private DifficultyLevel difficultyLevel;
 
     public Integer getId() {
         return id;
@@ -78,6 +83,14 @@ public class VideoEntity {
         this.category = category;
     }
 
+    public DifficultyLevel getDifficultyLevel() {
+        return difficultyLevel;
+    }
+
+    public void setDifficultyLevel(DifficultyLevel difficultyLevel) {
+        this.difficultyLevel = difficultyLevel;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -88,11 +101,12 @@ public class VideoEntity {
                 Objects.equals(youtubeId, that.youtubeId) &&
                 Objects.equals(rating, that.rating) &&
                 Objects.equals(description, that.description) &&
-                Objects.equals(category, that.category);
+                Objects.equals(category, that.category) &&
+                Objects.equals(difficultyLevel, that.difficultyLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, youtubeId, rating, description, category);
+        return Objects.hash(id, title, youtubeId, rating, description, category, difficultyLevel);
     }
 }

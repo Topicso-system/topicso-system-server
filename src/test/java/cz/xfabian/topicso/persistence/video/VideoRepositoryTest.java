@@ -3,6 +3,7 @@ package cz.xfabian.topicso.persistence.video;
 import cz.xfabian.topicso.TopicsoTestBase;
 import cz.xfabian.topicso.persistence.category.CategoryEntity;
 import cz.xfabian.topicso.persistence.category.CategoryRepository;
+import cz.xfabian.topicso.persistence.difficulty.DifficultyLevel;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -52,5 +53,20 @@ public class VideoRepositoryTest extends TopicsoTestBase {
         ArrayList<VideoEntity> videosByCategoryA = videoRepository.findByCategory(categoryA.getId());
 
         Assert.assertEquals(List.of(aCategoryVideo1, aCategoryVideo2), videosByCategoryA);
+    }
+
+    @Test
+    public void findByCategoryAndDifficultyTest() {
+        CategoryEntity categoryA = persistedEntityFactory.persistedCategory("CategoryA");
+        CategoryEntity categoryB = persistedEntityFactory.persistedCategory("CategoryB");
+
+        VideoEntity aCategoryBeginner = persistedEntityFactory.persistedVideo("aCategoryVideo1", categoryA, DifficultyLevel.BEGINNER);
+        VideoEntity aCategoryAdvanced1 = persistedEntityFactory.persistedVideo("aCategoryVideo2", categoryA, DifficultyLevel.ADVANCED);
+        VideoEntity aCategoryAdvanced2 = persistedEntityFactory.persistedVideo("aCategoryVideo2", categoryA, DifficultyLevel.ADVANCED);
+        VideoEntity bCategoryAdvanced = persistedEntityFactory.persistedVideo("bCategoryVideo", categoryB, DifficultyLevel.ADVANCED);
+
+        ArrayList<VideoEntity> videosByCategoryA = videoRepository.findByCategoryAndDifficulty(categoryA.getId(), DifficultyLevel.ADVANCED);
+
+        Assert.assertEquals(List.of(aCategoryAdvanced1, aCategoryAdvanced2), videosByCategoryA);
     }
 }
