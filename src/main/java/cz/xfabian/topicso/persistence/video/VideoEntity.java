@@ -25,7 +25,7 @@ public class VideoEntity {
     @Column(columnDefinition = "NUMERIC(2)")
     private Double rating;
 
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "clob")
     private String description;
 
     @ManyToOne(fetch= FetchType.LAZY)
