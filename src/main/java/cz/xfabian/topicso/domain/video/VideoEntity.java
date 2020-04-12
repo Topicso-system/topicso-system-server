@@ -32,7 +32,7 @@ public class VideoEntity {
     private CategoryEntity category;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "difficulty_level")
+    @Column(name = "difficulty_level", nullable = false)
     private DifficultyLevel difficultyLevel;
 
     public Integer getId() {

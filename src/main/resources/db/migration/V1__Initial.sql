@@ -19,7 +19,7 @@ CREATE TABLE video (
     youtube_id VARCHAR(100) NOT NULL,
     rating NUMERIC(2),
     description TEXT,
-    difficulty_level VARCHAR(50),
+    difficulty_level VARCHAR(50) NOT NULL,
     category_id INT REFERENCES Category(Id)
 );
 CREATE INDEX video_category_index ON video (category_id);
