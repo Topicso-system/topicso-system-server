@@ -1,5 +1,7 @@
 package cz.xfabian.topicso.rest.video.model;
 
+import cz.xfabian.topicso.rest.difficulty.model.DifficultyLevelModel;
+
 import java.util.Objects;
 
 public class VideoModel {

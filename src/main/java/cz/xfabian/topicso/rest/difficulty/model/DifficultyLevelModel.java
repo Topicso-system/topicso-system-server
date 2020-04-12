@@ -1,4 +1,4 @@
-package cz.xfabian.topicso.rest.video.model;
+package cz.xfabian.topicso.rest.difficulty.model;
 
 public class DifficultyLevelModel {
 

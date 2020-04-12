@@ -2,6 +2,7 @@ package cz.xfabian.topicso.rest.video.model;
 
 import com.google.common.collect.ImmutableList;
 import cz.xfabian.topicso.domain.video.VideoEntity;
+import cz.xfabian.topicso.rest.difficulty.model.DifficultyLevelModelMapper;
 
 import java.util.List;
 
