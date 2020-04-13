@@ -1,6 +1,9 @@
 # Application environment (test, debug, prod)
 environment.mode=debug
 
+# YouTube
+youtube.api.key=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
 # Datasource
 spring.datasource.url=jdbc:postgresql://localhost:5432/topicso
 spring.datasource.username=postgres
