@@ -9,7 +9,7 @@ public class VideoModel {
     private Integer id;
     private String title;
     private String youtubeId;
-    private double rating;
+    private Double rating;
     private String description;
     private DifficultyLevelModel difficulty;
 
@@ -37,7 +37,7 @@ public class VideoModel {
         this.youtubeId = youtubeId;
     }
 
-    public double getRating() {
+    public Double getRating() {
         return rating;
     }
 

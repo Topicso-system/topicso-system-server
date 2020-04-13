@@ -1,9 +1,10 @@
 package cz.xfabian.topicso.rest.config;
 
-import cz.xfabian.topicso.rest.RestTestBase;
+import cz.xfabian.topicso.TopicsoIntegrationTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
@@ -13,7 +14,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-public class CorsTest extends RestTestBase {
+@SpringBootTest
+public class CorsIT extends TopicsoIntegrationTestBase {
 
     @Value( "${cors.client}" )
     private String allowedOrigin;

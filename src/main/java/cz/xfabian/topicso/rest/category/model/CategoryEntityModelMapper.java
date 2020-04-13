@@ -1,22 +1,11 @@
 package cz.xfabian.topicso.rest.category.model;
 
-import com.google.common.collect.ImmutableList;
 import cz.xfabian.topicso.domain.category.CategoryEntity;
+import cz.xfabian.topicso.rest.model.AbstractModelMapper;
 
-import java.util.List;
+public class CategoryEntityModelMapper extends AbstractModelMapper<CategoryModel, CategoryEntity> {
 
-public class CategoryEntityModelMapper {
-
-    public List<CategoryModel> map(List<CategoryEntity> categoryEntities) {
-        ImmutableList.Builder<CategoryModel> categoryModelListBuilder = ImmutableList.builder();
-
-        for (CategoryEntity categoryEntity: categoryEntities) {
-            categoryModelListBuilder.add(map(categoryEntity));
-        }
-
-        return categoryModelListBuilder.build();
-    }
-
+    @Override
     public CategoryModel map(CategoryEntity categoryEntity) {
         CategoryModel categoryModel = new CategoryModel();
         categoryModel.setId(categoryEntity.getId());

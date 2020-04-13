@@ -1,20 +1,18 @@
 package cz.xfabian.topicso.domain.category;
 
-import cz.xfabian.topicso.TopicsoTestBase;
+import cz.xfabian.topicso.domain.PersistenceTestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
-public class CategoryRepositoryTest extends TopicsoTestBase {
+public class CategoryRepositoryTest extends PersistenceTestBase {
 
     @Autowired
     private CategoryRepository categoryRepository;

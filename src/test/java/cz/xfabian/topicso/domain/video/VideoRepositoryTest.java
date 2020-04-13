@@ -1,6 +1,6 @@
 package cz.xfabian.topicso.domain.video;
 
-import cz.xfabian.topicso.TopicsoTestBase;
+import cz.xfabian.topicso.domain.PersistenceTestBase;
 import cz.xfabian.topicso.domain.category.CategoryEntity;
 import cz.xfabian.topicso.domain.category.CategoryRepository;
 import cz.xfabian.topicso.domain.difficulty.DifficultyLevel;
@@ -9,15 +9,13 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
-public class VideoRepositoryTest extends TopicsoTestBase {
+public class VideoRepositoryTest extends PersistenceTestBase {
 
     @Autowired
     private VideoRepository videoRepository;

@@ -1,5 +1,6 @@
 package cz.xfabian.topicso.seeder;
 
+import cz.xfabian.topicso.config.AppEnvironment;
 import cz.xfabian.topicso.core.video.VideoService;
 import cz.xfabian.topicso.domain.category.CategoryEntity;
 import cz.xfabian.topicso.domain.category.CategoryRepository;
@@ -15,6 +16,9 @@ import org.springframework.stereotype.Component;
 public class DbSeeder {
 
     @Autowired
+    private AppEnvironment environment;
+
+    @Autowired
     private VideoService videoService;
 
     @Autowired
@@ -25,7 +29,8 @@ public class DbSeeder {
 
     @EventListener
     public void seed(ContextRefreshedEvent event) {
-        if (!videoRepository.findAll().isEmpty()) return; // Skip when data already inserted
+        if (!environment.isDebug() || isDataInserted()) return; // Skip
+
         seedCategories();
         seedVideos();
     }
@@ -122,5 +127,9 @@ public class DbSeeder {
 
     private void throwIfWrongCategory(CategoryEntity category, String expectedCategoryTitle) {
         if (!category.getName().equals(expectedCategoryTitle)) throw new IllegalStateException("Wrong category has been loaded during seeding");
+    }
+
+    private boolean isDataInserted() {
+        return !videoRepository.findAll().isEmpty();
     }
 }

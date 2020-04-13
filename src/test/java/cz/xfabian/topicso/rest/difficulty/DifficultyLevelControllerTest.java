@@ -4,15 +4,16 @@ import cz.xfabian.topicso.domain.difficulty.DifficultyLevel;
 import cz.xfabian.topicso.rest.RestTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @RunWith(SpringRunner.class)
+@WebMvcTest(DifficultyLevelController.class)
 public class DifficultyLevelControllerTest extends RestTestBase {
 
     @Test
