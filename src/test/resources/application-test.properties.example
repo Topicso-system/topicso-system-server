@@ -1,0 +1,15 @@
+environment.mode=test
+
+## Datasource
+spring.datasource.url=jdbc:h2:mem:testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+
+#Hibernate properties
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+
+#Cross-Origin-Resource-Sharing
+cors.client=http://localhost:4200
