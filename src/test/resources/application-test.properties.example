@@ -3,6 +3,7 @@ environment.mode=test
 
 # YouTube
 youtube.api.key=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+youtube.api.uri=https://www.googleapis.com/youtube/v3
 
 # Datasource
 spring.datasource.url=jdbc:h2:mem:testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
